@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { useAuth } from '../contexts/AuthContext';
-import { api } from '../utils/api';
 import {
   ArrowLeft,
   User,
-  Mail,
   Calendar,
-  FileText,
   MessageCircle,
   ThumbsUp,
-  ThumbsDown,
   Eye,
   Clock,
+  Calendar as CalendarIcon,
+  MessageSquare,
+  Heart,
+  Flag,
+  MoreHorizontal,
+  Bookmark,
+  Share,
+  Mail,
+  FileText,
   Hash,
 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { ko } from 'date-fns/locale';
+import { api } from '../utils/api';
 
 const UserProfile = () => {
   const { username } = useParams();
   const navigate = useNavigate();
-  const { user } = useAuth();
   const [activeTab, setActiveTab] = useState('posts');
 
   // 사용자 정보 조회

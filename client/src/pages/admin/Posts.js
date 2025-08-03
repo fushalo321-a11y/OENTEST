@@ -5,19 +5,15 @@ import { api } from '../../utils/api';
 import {
   FileText,
   Search,
-  Filter,
   CheckCircle,
   XCircle,
   Pin,
   Lock,
-  Eye,
-  Edit,
-  Trash2,
   User,
   Calendar,
   MessageCircle,
   ThumbsUp,
-  Eye as EyeIcon,
+  Eye,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { formatDistanceToNow } from 'date-fns';
@@ -260,7 +256,7 @@ const Posts = () => {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         <div className="flex items-center space-x-4">
                           <div className="flex items-center">
-                            <EyeIcon className="h-3 w-3 mr-1" />
+                            <Eye className="h-3 w-3 mr-1" />
                             {post.viewCount || 0}
                           </div>
                           <div className="flex items-center">

@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useAuth } from '../contexts/AuthContext';
 import { api } from '../utils/api';
 import {
   ArrowLeft,
-  Heart,
   MessageCircle,
   Share2,
-  MoreHorizontal,
   Edit,
   Trash2,
-  Flag,
   ThumbsUp,
   ThumbsDown,
   User,

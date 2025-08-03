@@ -5,19 +5,12 @@ import { api } from '../../utils/api';
 import {
   Users as UsersIcon,
   Search,
-  Filter,
-  MoreHorizontal,
-  CheckCircle,
-  XCircle,
-  Shield,
   User,
   Mail,
   Calendar,
-  Eye,
-  Edit,
-  Trash2,
-  FileText,
-  MessageCircle,
+  CheckCircle,
+  XCircle,
+  Shield,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { formatDistanceToNow } from 'date-fns';
@@ -227,11 +220,11 @@ const Users = () => {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         <div className="flex items-center space-x-4">
                           <div className="flex items-center">
-                            <FileText className="h-3 w-3 mr-1" />
+                            {/* FileText 제거 */}
                             {userItem.postCount || 0}
                           </div>
                           <div className="flex items-center">
-                            <MessageCircle className="h-3 w-3 mr-1" />
+                            {/* MessageCircle 제거 */}
                             {userItem.commentCount || 0}
                           </div>
                         </div>

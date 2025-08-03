@@ -6,15 +6,7 @@ import {
   Users,
   FileText,
   MessageCircle,
-  Flag,
-  TrendingUp,
-  Eye,
-  ThumbsUp,
-  ThumbsDown,
   AlertTriangle,
-  CheckCircle,
-  XCircle,
-  Clock,
 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { ko } from 'date-fns/locale';
@@ -87,7 +79,7 @@ const Dashboard = () => {
     {
       title: '신고된 콘텐츠',
       value: stats?.totalReports || 0,
-      icon: Flag,
+      icon: AlertTriangle,
       color: 'bg-red-500',
       change: stats?.newReportsThisWeek || 0,
       changeText: '이번 주 신규',
@@ -98,7 +90,7 @@ const Dashboard = () => {
     post: FileText,
     comment: MessageCircle,
     user: Users,
-    report: Flag,
+    report: AlertTriangle,
   };
 
   const activityColors = {
@@ -177,13 +169,13 @@ const Dashboard = () => {
             <div className="p-6">
               {recentActivity.length === 0 ? (
                 <div className="text-center py-8">
-                  <Clock className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                  <AlertTriangle className="h-12 w-12 text-gray-400 mx-auto mb-4" />
                   <p className="text-gray-500">최근 활동이 없습니다.</p>
                 </div>
               ) : (
                 <div className="space-y-4">
                   {recentActivity.slice(0, 5).map((activity, index) => {
-                    const Icon = activityIcons[activity.type] || Clock;
+                    const Icon = activityIcons[activity.type] || AlertTriangle;
                     const color = activityColors[activity.type] || 'text-gray-600';
                     
                     return (
@@ -216,7 +208,7 @@ const Dashboard = () => {
           <div className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <button className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
-                <Flag className="h-4 w-4 mr-2" />
+                <AlertTriangle className="h-4 w-4 mr-2" />
                 신고 처리하기
               </button>
               <button className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">

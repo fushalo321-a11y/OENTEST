@@ -9,8 +9,6 @@ import {
   Save,
   X,
   Hash,
-  Tag,
-  FileText,
   AlertCircle,
 } from 'lucide-react';
 import toast from 'react-hot-toast';
