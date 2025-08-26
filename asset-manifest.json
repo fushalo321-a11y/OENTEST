@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.css": "/oentest-master-system/static/css/main.d73447ab.css",
+    "main.js": "/oentest-master-system/static/js/main.038d3194.js",
+    "index.html": "/oentest-master-system/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.d73447ab.css",
+    "static/js/main.038d3194.js"
+  ]
+}
