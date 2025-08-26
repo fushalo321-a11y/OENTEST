@@ -68,10 +68,19 @@ const AdminBlocker = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // admin 경로 차단
     if (location.pathname.startsWith('/admin')) {
-      navigate('/', { replace: true });
+      console.log('Admin access blocked, redirecting to home');
+      window.location.href = '/';
+      return;
     }
   }, [location.pathname, navigate]);
+
+  // admin 경로에 직접 접근 시 즉시 차단
+  if (location.pathname.startsWith('/admin')) {
+    window.location.href = '/';
+    return null;
+  }
 
   return null;
 };

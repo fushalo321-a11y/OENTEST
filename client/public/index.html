@@ -38,5 +38,15 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    
+    <!-- Admin page blocking script -->
+    <script>
+      (function() {
+        if (window.location.pathname.startsWith('/admin')) {
+          console.log('Admin access blocked by client-side script');
+          window.location.href = '/';
+        }
+      })();
+    </script>
   </body>
 </html> 
