@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
@@ -62,11 +62,26 @@ const queryClient = new QueryClient({
   },
 });
 
+// Admin 경로 차단 컴포넌트
+const AdminBlocker = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.pathname.startsWith('/admin')) {
+      navigate('/', { replace: true });
+    }
+  }, [location.pathname, navigate]);
+
+  return null;
+};
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router>
         <AuthProvider>
+          <AdminBlocker />
           <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#FAF9F6' }}>
             <Navbar />
             <main className="flex-1">

@@ -6,6 +6,19 @@
   NODE_VERSION = "18"
   NPM_VERSION = "9"
 
+# 관리자 페이지 차단 및 리다이렉트
+[[redirects]]
+  from = "/admin"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/"
+  status = 301
+  force = true
+
 # SPA 라우팅
 [[redirects]]
   from = "/*"
