@@ -5,12 +5,55 @@
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
   }
   
   body {
     @apply text-gray-900;
     background-color: #FAF9F6;
+    font-family: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* 모든 텍스트 요소에 부드러운 폰트 적용 */
+  h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, label, a {
+    font-family: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* 제목 스타일 개선 */
+  h1 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+  
+  h3 {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  
+  /* 본문 텍스트 개선 */
+  p, span, div {
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+  }
+  
+  /* 버튼 텍스트 개선 */
+  button {
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -20,11 +63,11 @@
   }
   
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+    @apply btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
   }
   
   .btn-secondary {
-    @apply btn bg-white text-gray-700 border-gray-300 hover:bg-gray-50 focus:ring-primary-500;
+    @apply btn bg-white text-gray-700 border-gray-300 hover:bg-gray-50 focus:ring-blue-500;
   }
   
   .btn-danger {
@@ -36,7 +79,7 @@
   }
   
   .input {
-    @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm;
+    @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
   }
   
   .textarea {
@@ -66,7 +109,7 @@
   }
   
   .badge-primary {
-    @apply badge bg-primary-100 text-primary-800;
+    @apply badge bg-blue-100 text-blue-800;
   }
   
   .badge-secondary {
@@ -86,7 +129,7 @@
   }
   
   .loading {
-    @apply animate-spin rounded-full h-4 w-4 border-2 border-gray-300 border-t-primary-600;
+    @apply animate-spin rounded-full h-4 w-4 border-2 border-gray-300 border-t-blue-600;
   }
   
   .fade-in {

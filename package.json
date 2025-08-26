@@ -5,11 +5,17 @@
   "main": "index.js",
   "scripts": {
     "build": "cd client && npm run build",
+    "build:analyze": "cd client && npm run build -- --analyze",
     "dev:client": "cd client && npm start",
     "dev:full": "concurrently \"npm run dev:client\"",
     "setup": "npm install && cd client && npm install",
     "clean": "rm -rf node_modules client/node_modules client/build",
-    "deploy": "npm run build"
+    "deploy": "npm run build",
+    "deploy:netlify": "npm run build && netlify deploy --prod --dir=client/build",
+    "lint": "cd client && npm run lint",
+    "lint:fix": "cd client && npm run lint -- --fix",
+    "test": "cd client && npm test",
+    "test:coverage": "cd client && npm test -- --coverage --watchAll=false"
   },
   "keywords": [
     "react",

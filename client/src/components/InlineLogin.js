@@ -75,7 +75,7 @@ const InlineLogin = () => {
           
           {/* 추가 옵션 */}
           <div className="flex items-center justify-between text-xs">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-1">
               <label className="flex items-center cursor-pointer">
                 <input
                   type="checkbox"
@@ -84,17 +84,17 @@ const InlineLogin = () => {
                   onChange={handleChange}
                   className="sr-only"
                 />
-                <div className="w-5 h-3 bg-gray-300 rounded-full relative">
-                  <div className={`w-2 h-2 bg-white rounded-full absolute top-0.5 transition-transform ${formData.autoLogin ? 'translate-x-2' : 'translate-x-0.5'}`}></div>
+                <div className="w-4 h-2.5 bg-gray-300 rounded-full relative">
+                  <div className={`w-1.5 h-1.5 bg-white rounded-full absolute top-0.5 transition-transform ${formData.autoLogin ? 'translate-x-1.5' : 'translate-x-0.5'}`}></div>
                 </div>
-                <span className="ml-2 text-gray-600">자동 로그인</span>
+                <span className="ml-1 text-gray-600 whitespace-nowrap text-xs">자동로그인</span>
               </label>
             </div>
             
-            <div className="flex items-center space-x-1 text-gray-600">
-              <button className="hover:text-purple-600">정보찾기</button>
-              <span>·</span>
-              <button className="hover:text-purple-600">회원가입</button>
+            <div className="flex items-center space-x-0.5 text-gray-600">
+              <button className="hover:text-purple-600 whitespace-nowrap text-xs">정보찾기</button>
+              <span className="text-xs">·</span>
+              <button className="hover:text-purple-600 whitespace-nowrap text-xs">회원가입</button>
             </div>
           </div>
         </form>

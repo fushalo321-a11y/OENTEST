@@ -4,8 +4,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
-import AdminRoute from './components/AdminRoute';
-
 // Pages
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -15,10 +13,38 @@ import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
 import Profile from './pages/Profile';
 import UserProfile from './pages/UserProfile';
-import AdminDashboard from './pages/admin/Dashboard';
-import AdminUsers from './pages/admin/Users';
-import AdminPosts from './pages/admin/Posts';
-import AdminReports from './pages/admin/Reports';
+
+// Category Pages
+import Category1 from './pages/Category1';
+import Category2 from './pages/Category2';
+import Category3 from './pages/Category3';
+import Category4 from './pages/Category4';
+import Category5 from './pages/Category5';
+import Category6 from './pages/Category6';
+import CustomerCenter from './pages/CustomerCenter';
+import Event from './pages/Event';
+import WarrantySites from './pages/WarrantySites';
+import ScamVerification from './pages/ScamVerification';
+import Gallery from './pages/Gallery';
+import GalleryDetail from './pages/GalleryDetail';
+import OfflineCasino from './pages/OfflineCasino';
+import Poker from './pages/Poker';
+import Baccarat from './pages/Baccarat';
+import DragonTiger from './pages/DragonTiger';
+
+// Point Pages
+import PointExchange from './pages/PointExchange';
+import PointTrading from './pages/PointTrading';
+import PointRanking from './pages/PointRanking';
+import GiftcardExchange from './pages/GiftcardExchange';
+
+// Event Pages
+import LotteryEvent from './pages/LotteryEvent';
+import OenTestEvent from './pages/OenTestEvent';
+
+// Customer Center Pages
+import Inquiry from './pages/Inquiry';
+import Notices from './pages/Notices';
 
 // Components
 import Navbar from './components/Navbar';
@@ -45,83 +71,105 @@ function App() {
             <Navbar />
             <main className="flex-1">
               <Routes>
-                {/* Public Routes */}
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/posts/:id" element={<PostDetail />} />
-                <Route path="/user/:username" element={<UserProfile />} />
-                
-                {/* Protected Routes */}
-                <Route path="/create-post" element={
-                  <PrivateRoute>
-                    <CreatePost />
-                  </PrivateRoute>
-                } />
-                <Route path="/edit-post/:id" element={
-                  <PrivateRoute>
-                    <EditPost />
-                  </PrivateRoute>
-                } />
-                <Route path="/profile" element={
-                  <PrivateRoute>
-                    <Profile />
-                  </PrivateRoute>
-                } />
-                
-                {/* Admin Routes */}
-                <Route path="/admin" element={
-                  <AdminRoute>
-                    <AdminDashboard />
-                  </AdminRoute>
-                } />
-                <Route path="/admin/users" element={
-                  <AdminRoute>
-                    <AdminUsers />
-                  </AdminRoute>
-                } />
-                <Route path="/admin/posts" element={
-                  <AdminRoute>
-                    <AdminPosts />
-                  </AdminRoute>
-                } />
-                <Route path="/admin/reports" element={
-                  <AdminRoute>
-                    <AdminReports />
-                  </AdminRoute>
-                } />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              duration: 4000,
-              style: {
-                background: '#363636',
-                color: '#fff',
-              },
-              success: {
-                duration: 3000,
-                iconTheme: {
-                  primary: '#10b981',
-                  secondary: '#fff',
+                  {/* Public Routes */}
+                  <Route path="/" element={<Home />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/posts/:id" element={<PostDetail />} />
+                  <Route path="/user/:username" element={<UserProfile />} />
+                  <Route path="/warranty-sites" element={<WarrantySites />} />
+                  <Route path="/scam-verification" element={<ScamVerification />} />
+                  
+                  {/* Category Routes */}
+                  <Route path="/category-1" element={<Category1 />} />
+                  <Route path="/category-2" element={<Category2 />} />
+                  <Route path="/category-3" element={<Category3 />} />
+                  <Route path="/category-4" element={<Category4 />} />
+                  <Route path="/category-5" element={<Category5 />} />
+                  <Route path="/category-6" element={<Category6 />} />
+                  <Route path="/customer-center" element={<CustomerCenter />} />
+                  <Route path="/event" element={<Event />} />
+                  
+                  {/* Community Menu Routes */}
+                  <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/gallery/:id" element={<GalleryDetail />} />
+                  <Route path="/free-board" element={<Category2 />} />
+                  <Route path="/stock-board" element={<Category3 />} />
+                  <Route path="/coin-board" element={<Category4 />} />
+                  <Route path="/sports-news" element={<Category5 />} />
+                  <Route path="/online-casino" element={<Category6 />} />
+                  <Route path="/offline-casino" element={<OfflineCasino />} />
+                  
+                  {/* Game Zone Menu Routes */}
+                  <Route path="/poker" element={<Poker />} />
+                  <Route path="/baccarat" element={<Baccarat />} />
+                  <Route path="/dragon-tiger" element={<DragonTiger />} />
+                  
+                  {/* Points Menu Routes */}
+                  <Route path="/point-exchange" element={<PointExchange />} />
+                  <Route path="/point-trading" element={<PointTrading />} />
+                  <Route path="/point-ranking" element={<PointRanking />} />
+                  <Route path="/giftcard-exchange" element={<GiftcardExchange />} />
+                  
+                  {/* Event Menu Routes */}
+                  <Route path="/lottery-event" element={<LotteryEvent />} />
+                  <Route path="/oen-test-event" element={<OenTestEvent />} />
+                  
+                  {/* Customer Center Menu Routes */}
+                  <Route path="/inquiry" element={<Inquiry />} />
+                  <Route path="/notices" element={<Notices />} />
+                  <Route path="/notices/:id" element={<Notices />} />
+                  
+                  {/* Protected Routes */}
+                  <Route path="/create-post" element={
+                    <PrivateRoute>
+                      <CreatePost />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/edit-post/:id" element={
+                    <PrivateRoute>
+                      <EditPost />
+                    </PrivateRoute>
+                  } />
+                  <Route path="/profile" element={
+                    <PrivateRoute>
+                      <Profile />
+                    </PrivateRoute>
+                  } />
+                  
+
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                duration: 4000,
+                style: {
+                  background: '#363636',
+                  color: '#fff',
                 },
-              },
-              error: {
-                duration: 5000,
-                iconTheme: {
-                  primary: '#ef4444',
-                  secondary: '#fff',
+                success: {
+                  duration: 3000,
+                  iconTheme: {
+                    primary: '#10b981',
+                    secondary: '#fff',
+                  },
                 },
-              },
-            }}
-          />
-        </AuthProvider>
-      </Router>
-    </QueryClientProvider>
-  );
-}
+                error: {
+                  duration: 5000,
+                  iconTheme: {
+                    primary: '#ef4444',
+                    secondary: '#fff',
+                  },
+                },
+              }}
+            />
+          </AuthProvider>
+        </Router>
+      </QueryClientProvider>
+    );
+  }
 
 export default App; 

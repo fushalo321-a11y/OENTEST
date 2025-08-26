@@ -76,7 +76,7 @@ const LoginModal = ({ isOpen, onClose }) => {
             
             {/* 추가 옵션 */}
             <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
                 <label className="flex items-center cursor-pointer">
                   <input
                     type="checkbox"
@@ -85,17 +85,17 @@ const LoginModal = ({ isOpen, onClose }) => {
                     onChange={handleChange}
                     className="sr-only"
                   />
-                  <div className="w-6 h-4 bg-gray-300 rounded-full relative">
-                    <div className={`w-3 h-3 bg-white rounded-full absolute top-0.5 transition-transform ${formData.autoLogin ? 'translate-x-2' : 'translate-x-0.5'}`}></div>
+                  <div className="w-5 h-3 bg-gray-300 rounded-full relative">
+                    <div className={`w-2 h-2 bg-white rounded-full absolute top-0.5 transition-transform ${formData.autoLogin ? 'translate-x-2' : 'translate-x-0.5'}`}></div>
                   </div>
-                  <span className="ml-2 text-gray-600">자동 로그인</span>
+                  <span className="ml-1 text-gray-600 whitespace-nowrap text-sm">자동로그인</span>
                 </label>
               </div>
               
-              <div className="flex items-center space-x-1 text-gray-600">
-                <a href="#" className="hover:text-purple-600">정보찾기</a>
-                <span>·</span>
-                <a href="#" className="hover:text-purple-600">회원가입</a>
+              <div className="flex items-center space-x-0.5 text-gray-600">
+                <a href="#" className="hover:text-purple-600 whitespace-nowrap text-sm">정보찾기</a>
+                <span className="text-sm">·</span>
+                <a href="#" className="hover:text-purple-600 whitespace-nowrap text-sm">회원가입</a>
               </div>
             </div>
           </form>
