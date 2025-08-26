@@ -1,5 +1,5 @@
-/admin    /    302!
-/admin/*    /    302!
-/admin/login    /    302!
-/admin/dashboard    /    302!
+/admin    /    200!
+/admin/*    /    200!
+/admin/login    /    200!
+/admin/dashboard    /    200!
 /*    /index.html   200 

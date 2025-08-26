@@ -42,10 +42,28 @@
     <!-- Admin page blocking script -->
     <script>
       (function() {
+        // 즉시 실행되는 admin 차단
         if (window.location.pathname.startsWith('/admin')) {
           console.log('Admin access blocked by client-side script');
-          window.location.href = '/';
+          window.location.replace('/');
+          return;
         }
+        
+        // DOM 로드 후 추가 차단
+        document.addEventListener('DOMContentLoaded', function() {
+          if (window.location.pathname.startsWith('/admin')) {
+            console.log('Admin access blocked after DOM load');
+            window.location.replace('/');
+          }
+        });
+        
+        // 페이지 로드 완료 후 최종 차단
+        window.addEventListener('load', function() {
+          if (window.location.pathname.startsWith('/admin')) {
+            console.log('Admin access blocked after page load');
+            window.location.replace('/');
+          }
+        });
       })();
     </script>
   </body>

@@ -70,15 +70,28 @@ const AdminBlocker = () => {
   useEffect(() => {
     // admin 경로 차단
     if (location.pathname.startsWith('/admin')) {
-      console.log('Admin access blocked, redirecting to home');
-      window.location.href = '/';
+      console.log('Admin access blocked by React component');
+      window.location.replace('/');
       return;
     }
   }, [location.pathname, navigate]);
 
+  // 추가 보안: 주기적으로 확인
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.location.pathname.startsWith('/admin')) {
+        console.log('Admin access blocked by periodic check');
+        window.location.replace('/');
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // admin 경로에 직접 접근 시 즉시 차단
   if (location.pathname.startsWith('/admin')) {
-    window.location.href = '/';
+    console.log('Admin access blocked immediately');
+    window.location.replace('/');
     return null;
   }
 

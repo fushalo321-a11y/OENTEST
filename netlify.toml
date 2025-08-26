@@ -10,25 +10,25 @@
 [[redirects]]
   from = "/admin"
   to = "/"
-  status = 302
+  status = 200
   force = true
 
 [[redirects]]
   from = "/admin/*"
   to = "/"
-  status = 302
+  status = 200
   force = true
 
 [[redirects]]
   from = "/admin/login"
   to = "/"
-  status = 302
+  status = 200
   force = true
 
 [[redirects]]
   from = "/admin/dashboard"
   to = "/"
-  status = 302
+  status = 200
   force = true
 
 # SPA 라우팅
