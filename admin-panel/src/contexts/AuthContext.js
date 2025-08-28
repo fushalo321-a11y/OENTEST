@@ -32,13 +32,23 @@ export const AuthProvider = ({ children }) => {
 
   // 토큰 검증 (개발 환경에서는 테스트 계정 사용)
   useEffect(() => {
-    const token = localStorage.getItem('adminToken');
-    if (token) {
-      // 개발 환경에서는 토큰이 있으면 바로 마스터 계정으로 설정
-      setUser(TEST_MASTER_ACCOUNT);
-      setIsAuthenticated(true);
-    }
-    setIsLoading(false);
+    const checkAuth = () => {
+      try {
+        const token = localStorage.getItem('adminToken');
+        if (token) {
+          // 개발 환경에서는 토큰이 있으면 바로 마스터 계정으로 설정
+          setUser(TEST_MASTER_ACCOUNT);
+          setIsAuthenticated(true);
+        }
+      } catch (error) {
+        console.error('Auth check error:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    // 약간의 지연을 두어 로딩 상태를 확인할 수 있도록 함
+    setTimeout(checkAuth, 500);
   }, []);
 
   const login = async (username, password) => {

@@ -95,12 +95,6 @@ const Login = () => {
               {isLoading ? '로그인 중...' : '로그인'}
             </button>
           </div>
-
-          <div className="text-center">
-            <div className="text-sm text-gray-600">
-              <strong>테스트 계정:</strong> master / Master123!@#
-            </div>
-          </div>
         </form>
       </div>
     </div>

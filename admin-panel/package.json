@@ -2,7 +2,6 @@
   "name": "oentest-admin-panel",
   "version": "1.0.0",
   "description": "Master System - OEN TEST Admin Panel",
-  "homepage": "https://fusha.github.io/oentest-master-system",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.17",

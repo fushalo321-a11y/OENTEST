@@ -1,6 +1,6 @@
 [build]
-  command = "cd client && npm run build"
-  publish = "client/build"
+  command = "npm run build"
+  publish = "build"
   environment = { GENERATE_SOURCEMAP = "false" }
 
 # SPA 라우팅
@@ -101,6 +101,4 @@
   for = "*.woff2"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-    X-Content-Type-Options = "nosniff"
-
- 
+    X-Content-Type-Options = "nosniff" 
